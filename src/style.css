@@ -1,0 +1,15 @@
+.to-do-container ul li{
+    width: 80%;
+    overflow-wrap: break-word;
+    list-style-type: '🔔';
+    cursor: pointer;
+}
+li{
+    padding-left: 7px;
+}
+.removeDone{
+    text-decoration: line-through; 
+    /* hadi kt3ni anaho ila bghina chi text ndirou lih bhala mdroub 3lih kndirpu had style  */
+    color: grey;
+    
+}
