@@ -1,5 +1,6 @@
 .to-do-container ul li{
     width: 80%;
+    margin-left: 10px;
     overflow-wrap: break-word;
     list-style-type: '🔔';
     cursor: pointer;
