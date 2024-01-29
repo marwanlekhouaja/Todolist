@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import "./style.css";
 import { MdDeleteForever } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
@@ -8,23 +8,12 @@ import EditTask from "./EditTask";
 import { context } from "./context";
 import {motion} from 'framer-motion'
 import DeleteTask from "./DeleteTask";
+import AddTask from "./AddTask";
 function TodoListV2() {
-  // const [listToDo, setListToDo] = useState([]);
   const data=useContext(context)
-  const refMission = useRef();
 
   const [id,setId]=useState(null)
   const [dataTaskEdit,setTaskEdit]=useState([])
-  
-  console.log(data.listToDo)
-  const save = () => {
-    const missionValue = refMission.current.value;
-
-    let task={mission:missionValue,id:Date.now(),completed:false}
-    data.addTask(task)
-
-  };
-
 
   const completedMission=(idTask)=>{
     data.completeTask(idTask)
@@ -78,24 +67,12 @@ function TodoListV2() {
         ))}
       </div>
       <hr style={{ fontWeight: "bold", color: "black" }} />
-      <form className="add d-flex">
-        <input
-          type="text"
-          placeholder="Enter your task here ..."
-          className="form-control w-75"
-          ref={refMission}
-          name=""
-          id=""
-        />
-        <input
-          type="button"
-          className="w-25 btn btn-primary"
-          onClick={save}
-          value="Add"
-        />
-      </form>
 
+       {/* component of add task to todolist */}
+      <AddTask/>
+       {/* component of edit task by showing modal */}
       <EditTask idEdit={id} dataTaskEdit={[dataTaskEdit]} />
+      {/* component of delete task by showing modal */}
       <DeleteTask idTask={id} />
       </div>
   );

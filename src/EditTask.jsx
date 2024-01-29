@@ -48,7 +48,7 @@ function EditTask({idEdit,dataTaskEdit}) {
                 />
                 <div className="d-flex align-items-center mt-2 mb-2">
                   <label className="">completed</label>
-                  <input type="checkbox" ref={refCompleted} checked={`${task.completed?true:false}`} className=" ms-2 mt-1" id="" />
+                  <input type="checkbox" ref={refCompleted} defaultChecked={`${task.completed?true:false}`} className=" ms-2 mt-1" id="" />
                 </div>
                 <input
                   type="button"
